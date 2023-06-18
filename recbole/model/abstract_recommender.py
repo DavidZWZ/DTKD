@@ -260,7 +260,6 @@ class ContextRecommender(AbstractRecommender):
             for token_seq_field_dim in self.token_seq_field_dims:
                 self.token_seq_embedding_table.append(nn.Embedding(token_seq_field_dim, self.embedding_size))
         self.first_order_linear = FMFirstOrderLinear(config, dataset)
-        self.first_order_linear_lr = FMFirstOrderLinear_LR(config, dataset)
 
     def embed_float_fields(self, float_fields, embed=True):
         """Embed the float feature columns
